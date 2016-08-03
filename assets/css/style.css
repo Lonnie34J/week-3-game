@@ -1,0 +1,18 @@
+header{
+	text-align: center;
+}
+
+content{
+	margin-left: 9%;
+}
+
+img{
+	height: 400px;
+}
+
+aside{
+	background: black;
+	height: 400px;
+	color: white;
+	text-align: center;
+}
