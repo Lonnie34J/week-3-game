@@ -3,6 +3,7 @@ var characters = ["ryu","ken","sagat","chunli","mbison","balrog","ehonda","guile
 var userWins = 0;
 var triesRemaining = 6;
 
+
 alphabet = [];
 for (i = 97; i <= 122; i++){
     alphabet[alphabet.length] = String.fromCharCode(i);
@@ -12,6 +13,8 @@ console.log(alphabet);
 //takes users key presses
 document.onkeyup = function(event) { 
 	var lettersGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+//replaces placeholder text on page with user keys
+	document.getElementById("currentwordP").innerHTML=lettersGuessed;
 
 console.log(lettersGuessed);
 
@@ -36,6 +39,3 @@ function randomWord() {
 }
 randomWord();
 
-function replaceHolder() {
-	if(lettersGuessed==placeholder)
-}
