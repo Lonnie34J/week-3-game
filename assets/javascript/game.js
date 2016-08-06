@@ -2,23 +2,27 @@
 var characters = ["ryu","ken","sagat","chunli","mbison","balrog","ehonda","guile","zangief","cammy","vega","dhalsim","blanka"];
 var userWins = 0;
 var triesRemaining = 6;
+var letters = "abcdefghijklmnopqrstuvwxyz";
+var lettersArray = letters.split("");
+console.log(lettersArray);
+var guessedArray = [];
+var userGuess=guessedArray;
 
 
-alphabet = [];
-for (i = 97; i <= 122; i++){
-    alphabet[alphabet.length] = String.fromCharCode(i);
-}
-console.log(alphabet);
 
 //takes users key presses
 document.onkeyup = function(event) { 
 	var lettersGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-//replaces placeholder text on page with user keys
-	document.getElementById("currentwordP").innerHTML=lettersGuessed;
-
-console.log(lettersGuessed);
 
 
+//places letters in already guessed section
+var lettersUsed=document.getElementById("guessed");
+lettersUsed.innerHTML=guessedArray + lettersGuessed;
+
+guessedArray.push(lettersGuessed);
+console.log(guessedArray);
+
+var userGuess=lettersGuessed;
 }
 
 
@@ -31,7 +35,12 @@ function randomWord() {
 	for (var i=0; i<currentWord.length; i++){
 		placeholder=placeholder+"_";
 		console.log(placeholder);
+		//logs the current word's characters at their indexes
+		console.log(currentWord.charAt(i));	
+
 	}
+
+
 
 	//sets the random word on html page
 	newCurrent=document.getElementById("currentwordP");
