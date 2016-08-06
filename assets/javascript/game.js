@@ -8,6 +8,7 @@ var placeholder;
 
 
 
+
 //takes users key presses
 document.onkeyup = function(event) { 
 	var guessed = String.fromCharCode(event.keyCode).toLowerCase();
@@ -19,7 +20,9 @@ document.onkeyup = function(event) {
 		correctGuess.push(guessedPosition);
 	}
 	console.log(guessedPosition);
-	console.log(correctGuess);
+	
+	newTries = document.getElementById("tries");
+	newTries.innerHTML = triesRemaining;
 }
 
 
@@ -33,7 +36,7 @@ function randomWord() {
 		placeholder=placeholder+"_";
 		
 	}
-	console.log(currentWord.indexOf(guessed));
+	
 
 	//sets the random word on html page
 	newCurrent=document.getElementById("currentwordP");
